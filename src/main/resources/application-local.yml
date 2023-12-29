@@ -1,0 +1,21 @@
+server:
+  port: 9999
+
+spring:
+  application:
+    name: member
+  config:
+    import: configserver:http://localhost:8888
+  cloud:
+    config:
+      profile: local #  ,  로 여러 파일 가능.
+      label: main  # git branch
+
+encrypt:
+  key: globalecommerce1234
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh

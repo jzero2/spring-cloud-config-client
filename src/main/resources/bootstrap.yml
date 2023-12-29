@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: member
+#  cloud:
+#    config:
+#      uri: http://localhost:8888
+#  config:
+#    import: configserver:http://localhost:8888
+
+---
+spring:
+  profiles: local
+  config:
+    import: configserver:http://localhost:8888
+  cloud:
+    config:
+      uri: http://localhost:8888
+      profile: local
+      label: main
+#---
+#spring:
+#  profiles: alpha
+#  config:
+#    import: configserver:http://localhost:8888
+#  cloud:
+#    config:
+#      uri: http://localhost:8888
+#      profile: dev
+#      label: dev

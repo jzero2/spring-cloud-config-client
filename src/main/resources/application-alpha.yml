@@ -1,0 +1,21 @@
+server:
+  port: 9999
+
+spring:
+  application:
+    name: benefit
+  config:
+    import: configserver:http://localhost:8888
+  cloud:
+    config:
+      profile: dev
+      label: main
+
+encrypt:
+  key: globalecommerce1234
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
